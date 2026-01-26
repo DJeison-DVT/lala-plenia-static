@@ -1,0 +1,68 @@
+---
+import gana from "../assets/premios/Premios Gana.png";
+
+import entrada from "../assets/premios/Premios Entrada.png";
+import sala from "../assets/premios/Premios Sala.png";
+import merch from "../assets/premios/Premios Merch.png";
+import efectivo from "../assets/premios/Premios Efectivo.png";
+---
+
+<section class="container mx-auto py-16 px-4 relative z-20">
+	<!-- Logo Space -->
+	<div class="mb-12 flex justify-center">
+		<img
+			src={gana.src}
+			alt="Gana Logo"
+			class="h-40 w-auto object-contain"
+		/>
+	</div>
+
+	<!-- 4 Cols, not flex (grid), same size, overflow scroll on small screens -->
+	<div
+		class="grid grid-cols-[repeat(4,minmax(250px,1fr))] md:grid-cols-4 gap-6 overflow-x-auto pb-6 snap-x no-scrollbar"
+	>
+		<!-- Prize 1 -->
+		<div
+			class="snap-center h-auto rounded-xl flex flex-col items-center justify-center shrink-0 hover:shadow-xl transition-shadow duration-300"
+		>
+			<img
+				src={entrada.src}
+				alt="Entrada al cine"
+				class="w-full h-auto object-contain rounded-lg shadow-sm"
+			/>
+		</div>
+
+		<!-- Prize 2 -->
+		<div
+			class="snap-center h-auto rounded-xl flex flex-col items-center justify-center shrink-0 hover:shadow-xl transition-shadow duration-300"
+		>
+			<img
+				src={sala.src}
+				alt="Sala de cine"
+				class="w-full h-auto object-contain rounded-lg shadow-sm"
+			/>
+		</div>
+
+		<!-- Prize 3 -->
+		<div
+			class="snap-center h-auto rounded-xl flex flex-col items-center justify-center shrink-0 hover:shadow-xl transition-shadow duration-300"
+		>
+			<img
+				src={merch.src}
+				alt="Merch"
+				class="w-full h-auto object-contain rounded-lg shadow-sm"
+			/>
+		</div>
+
+		<!-- Prize 4 -->
+		<div
+			class="snap-center h-auto rounded-xl flex flex-col items-center justify-center shrink-0 hover:shadow-xl transition-shadow duration-300"
+		>
+			<img
+				src={efectivo.src}
+				alt="Efectivo"
+				class="w-full h-auto object-contain rounded-lg shadow-sm"
+			/>
+		</div>
+	</div>
+</section>

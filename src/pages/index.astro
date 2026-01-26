@@ -1,17 +1,44 @@
 ---
-
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import VideoSection from "../components/VideoSection.astro";
+import Prizes from "../components/Prizes.astro";
+import HowTo from "../components/HowTo.astro";
+import Products from "../components/Products.astro";
+import Footer from "../components/Footer.astro";
+import logo from "../assets/navbar/Navbar Logo.png";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" href={logo.src} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Golalazo de Sabor</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+		<Navbar />
+		<main>
+			<Hero />
+
+			<VideoSection />
+
+			<section id="premios" class="scroll-mt-36">
+				<Prizes />
+			</section>
+
+			<section id="como-participar" class="scroll-mt-36">
+				<HowTo />
+			</section>
+
+			<section id="productos" class="scroll-mt-36">
+				<Products />
+			</section>
+		</main>
+		<section id="terminos">
+			<Footer />
+		</section>
 	</body>
 </html>

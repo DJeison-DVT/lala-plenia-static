@@ -1,0 +1,48 @@
+---
+import description from "../assets/landing/Landing Descripcion.png";
+import home from "../assets/landing/Landing Home.png";
+import participa from "../assets/landing/Landing Participa.png";
+import products from "../assets/landing/Landing Products.png";
+---
+
+<header
+	class="container mx-auto px-4 flex flex-col md:flex-row min-h-125 my-15"
+>
+	<!-- Left Side: Home, Participa, Description -->
+	<div
+		class="shrink-0 w-full md:w-auto p-4 md:p-8 flex flex-col items-center justify-center gap-6 mb-8 md:mb-20"
+	>
+		<img
+			src={home.src}
+			alt="Home"
+			class="w-full max-w-64 xl:max-w-72 2xl:max-w-md h-auto object-contain"
+		/>
+		<img
+			src={participa.src}
+			alt="Participa"
+			class="w-full max-w-64 xl:max-w-72 2xl:max-w-md h-auto object-contain"
+		/>
+		<img
+			src={description.src}
+			alt="Descripción"
+			class="hidden md:block w-full max-w-64 xl:max-w-72 2xl:max-w-md h-auto object-contain"
+		/>
+	</div>
+
+	<!-- Right Side: Products (Grows) -->
+	<div
+		class="w-full grow p-4 lg:p-8 flex flex-col items-center justify-center"
+	>
+		<img
+			src={products.src}
+			alt="Products Hero"
+			class="w-full h-auto object-contain max-h-150"
+		/>
+		<!-- Mobile Description -->
+		<img
+			src={description.src}
+			alt="Descripción"
+			class="block md:hidden w-full max-w-96 h-auto object-contain mt-8"
+		/>
+	</div>
+</header>

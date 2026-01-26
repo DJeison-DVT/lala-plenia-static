@@ -1,0 +1,23 @@
+---
+import description from "../assets/video/Video Descripcion.png";
+---
+
+<section class="relative my-24 w-full">
+	<!-- Background element expanding top and bottom -->
+	<div class="absolute inset-x-0 -top-67.5 -bottom-120 bg-white -z-10"></div>
+
+	<div class="container mx-auto px-4">
+		<div class="flex justify-start mb-8">
+			<img
+				src={description.src}
+				alt="Video Descripcion"
+				class="h-auto max-w-full md:max-w-lg object-contain"
+			/>
+		</div>
+		<div
+			class="w-full aspect-video bg-black/5 rounded-lg flex items-center justify-center border border-dashed border-gray-300"
+		>
+			<span class="text-gray-500 font-medium">Video Placeholder</span>
+		</div>
+	</div>
+</section>
