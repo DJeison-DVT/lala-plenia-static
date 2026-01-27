@@ -1,0 +1,109 @@
+---
+import cuadro from "../assets/pop/Pop CUADRO.png";
+import logo from "../assets/pop/Pop LOGO.png";
+import texto from "../assets/pop/Pop TEXTO.png";
+import si from "../assets/pop/Pop SI.png";
+import no from "../assets/pop/Pop NO.png";
+import tache from "../assets/pop/Pop TACHE.png";
+---
+
+<div
+	id="age-gate"
+	class="fixed inset-0 z-100 flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-500"
+>
+	<div class="relative w-11/12 max-w-md md:max-w-lg lg:max-w-xl">
+		<!-- Main Card Background -->
+		<img
+			src={cuadro.src}
+			alt="Background"
+			class="relative w-full h-auto object-contain z-0 drop-shadow-2xl"
+		/>
+
+		<!-- Content Overlay -->
+		<div
+			class="absolute inset-0 z-10 flex flex-col items-center justify-center p-8 md:p-12 gap-4 md:gap-6"
+		>
+			<!-- Close Button (Tache) - Top Right relative to content area -->
+			<button
+				id="close-btn"
+				class="absolute top-10 right-10 sm:top-12 sm:right-12 md:top-20 md:right-20 hover:scale-110 transition-transform focus:outline-none"
+			>
+				<img
+					src={tache.src}
+					alt="Cerrar"
+					class="w-6 h-6 md:w-8 md:h-8 object-contain"
+				/>
+			</button>
+
+			<!-- Logo -->
+			<img
+				src={logo.src}
+				alt="Logo"
+				class="w-24 md:w-32 object-contain"
+			/>
+
+			<!-- Text -->
+			<img
+				src={texto.src}
+				alt="¿Eres mayor de edad?"
+				class="w-48 md:w-64 object-contain"
+			/>
+
+			<!-- Buttons (Si | No) -->
+			<div class="flex items-center gap-4 mt-2">
+				<button
+					id="si-btn"
+					class="hover:scale-105 transition-transform focus:outline-none"
+				>
+					<img
+						src={si.src}
+						alt="Sí"
+						class="h-8 md:h-10 object-contain"
+					/>
+				</button>
+				<button
+					id="no-btn"
+					class="hover:scale-105 transition-transform focus:outline-none"
+				>
+					<img
+						src={no.src}
+						alt="No"
+						class="h-8 md:h-10 object-contain"
+					/>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	const ageGate = document.getElementById("age-gate");
+	const siBtn = document.getElementById("si-btn");
+	const closeBtn = document.getElementById("close-btn");
+
+	// Block scroll immediately
+	document.body.style.overflow = "hidden";
+
+	function closePopup() {
+		if (!ageGate) return;
+		// Fade out
+		ageGate.style.opacity = "0";
+		ageGate.style.pointerEvents = "none";
+
+		// Remove from DOM and restore scroll after transition
+		setTimeout(() => {
+			ageGate.style.display = "none";
+			document.body.style.overflow = "";
+		}, 500);
+	}
+
+	if (siBtn) {
+		siBtn.addEventListener("click", closePopup);
+	}
+
+	// Assuming close button also dismisses for now,
+	// or user might want different behavior for explicit "Close" vs "Si"
+	if (closeBtn) {
+		closeBtn.addEventListener("click", closePopup);
+	}
+</script>
