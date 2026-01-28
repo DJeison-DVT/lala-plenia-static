@@ -1,0 +1,25 @@
+---
+import whatsappParticipa from "../assets/whatsapp/Whatsapp participa.png";
+
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<a
+	href="https://wa.me/5215539667230"
+	target="_blank"
+	rel="noopener noreferrer"
+	class:list={[
+		"pointer-events-auto transition-transform hover:scale-105 active:scale-95 block w-full lg:w-auto",
+		className,
+	]}
+>
+	<img
+		src={whatsappParticipa.src}
+		alt="Participa por WhatsApp"
+		class="h-auto w-full lg:w-96 object-contain"
+	/>
+</a>

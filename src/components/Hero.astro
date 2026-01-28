@@ -5,6 +5,7 @@ import participa from "../assets/landing/Landing Participa.png";
 import products from "../assets/landing/Landing Products.png";
 import mobileEmpaque from "../assets/landing/mobile/Mobile Landing empaque.png";
 import mobileBowl from "../assets/landing/mobile/Mobile Landing bowl.png";
+import WhatsappParticipa from "./WhatsappParticipa.astro";
 ---
 
 <header
@@ -29,6 +30,9 @@ import mobileBowl from "../assets/landing/mobile/Mobile Landing bowl.png";
 			alt="Descripción"
 			class="w-full max-w-64 xl:max-w-72 2xl:max-w-md h-auto object-contain"
 		/>
+		<div class="hidden md:block">
+			<WhatsappParticipa />
+		</div>
 	</div>
 
 	<!-- Right Side: Products (Grows) -->
@@ -56,4 +60,5 @@ import mobileBowl from "../assets/landing/mobile/Mobile Landing bowl.png";
 			/>
 		</div>
 	</div>
+	
 </header>

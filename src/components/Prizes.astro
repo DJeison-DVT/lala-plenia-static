@@ -5,6 +5,11 @@ import entrada from "../assets/premios/Premios Entrada.png";
 import sala from "../assets/premios/Premios Sala.png";
 import merch from "../assets/premios/Premios Merch.png";
 import efectivo from "../assets/premios/Premios Efectivo.png";
+
+import mobileEntrada from "../assets/premios/mobile/Mobile Premios Entrada.png";
+import mobileSala from "../assets/premios/mobile/Mobile Premios Sala.png";
+import mobileMerch from "../assets/premios/mobile/Mobile Premios Merch.png";
+import mobileEfectivo from "../assets/premios/mobile/Mobile Premios Efectivo.png";
 ---
 
 <section class="container mx-auto py-16 px-4 relative z-20">
@@ -17,51 +22,71 @@ import efectivo from "../assets/premios/Premios Efectivo.png";
 		/>
 	</div>
 
-	<!-- 4 Cols, not flex (grid), same size, overflow scroll on small screens -->
+	<!-- 4 Cols desktop, 2 Cols mobile -->
 	<div
-		class="grid grid-cols-[repeat(4,minmax(250px,1fr))] md:grid-cols-4 gap-6 overflow-x-auto pb-6 snap-x no-scrollbar"
+		class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pb-6"
 	>
 		<!-- Prize 1 -->
 		<div
-			class="snap-center h-auto rounded-xl flex flex-col items-center justify-center shrink-0 hover:shadow-xl transition-shadow duration-300"
+			class="h-auto rounded-xl flex flex-col items-center justify-center shrink-0 md:py-10 md:px-8"
 		>
 			<img
 				src={entrada.src}
 				alt="Entrada al cine"
-				class="w-full h-auto object-contain rounded-lg shadow-sm"
+				class="hidden md:block w-full h-auto object-contain rounded-lg shadow-sm"
+			/>
+			<img
+				src={mobileEntrada.src}
+				alt="Entrada al cine"
+				class="md:hidden w-full h-auto object-contain rounded-lg shadow-sm"
 			/>
 		</div>
 
 		<!-- Prize 2 -->
 		<div
-			class="snap-center h-auto rounded-xl flex flex-col items-center justify-center shrink-0 hover:shadow-xl transition-shadow duration-300"
+			class="h-auto rounded-xl flex flex-col items-center justify-center shrink-0"
 		>
 			<img
 				src={sala.src}
 				alt="Sala de cine"
-				class="w-full h-auto object-contain rounded-lg shadow-sm"
+				class="hidden md:block w-full h-auto object-contain rounded-lg shadow-sm"
+			/>
+			<img
+				src={mobileSala.src}
+				alt="Sala de cine"
+				class="md:hidden w-full h-auto object-contain rounded-lg shadow-sm"
 			/>
 		</div>
 
 		<!-- Prize 3 -->
 		<div
-			class="snap-center h-auto rounded-xl flex flex-col items-center justify-center shrink-0 hover:shadow-xl transition-shadow duration-300"
+			class="h-auto rounded-xl flex flex-col items-center justify-center shrink-0"
 		>
 			<img
 				src={merch.src}
 				alt="Merch"
-				class="w-full h-auto object-contain rounded-lg shadow-sm"
+				class="hidden md:block w-full h-auto object-contain rounded-lg shadow-sm"
+			/>
+			<img
+				src={mobileMerch.src}
+				alt="Merch"
+				class="md:hidden w-full h-auto object-contain rounded-lg shadow-sm"
 			/>
 		</div>
 
 		<!-- Prize 4 -->
 		<div
-			class="snap-center h-auto rounded-xl flex flex-col items-center justify-center shrink-0 hover:shadow-xl transition-shadow duration-300"
+			class="h-auto rounded-xl flex flex-col items-center justify-center shrink-0 md:px-8"
 		>
 			<img
 				src={efectivo.src}
 				alt="Efectivo"
-				class="w-full h-auto object-contain rounded-lg shadow-sm"
+				class="hidden md:block w-full h-auto object-contain rounded-lg shadow-sm"
+			/>
+			<img
+				src={mobileEfectivo.src}
+				alt="Efectivo"
+				class="md:hidden w-full h-auto object-contain rounded-lg shadow-sm"
 			/>
 		</div>
 	</div>

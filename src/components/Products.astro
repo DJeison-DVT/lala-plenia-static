@@ -10,6 +10,7 @@ import All from "../assets/products/Productos All.png";
 import Logo from "../assets/products/Productos Hero.png";
 import left from "../assets/products/Productos left.png";
 import right from "../assets/products/Productos right.png";
+import WhatsappParticipa from "./WhatsappParticipa.astro";
 ---
 
 <section class="container mx-auto py-16 px-4 relative z-20">
@@ -122,6 +123,16 @@ import right from "../assets/products/Productos right.png";
 	<!-- Pagination Circles -->
 	<div id="dots-container" class="flex justify-center gap-3 mt-8">
 		<!-- Dots injected by JS -->
+	</div>
+
+	<!-- Mobile CTA -->
+	<div class="md:hidden flex justify-center mt-12">
+		<WhatsappParticipa />
+	</div>
+
+	<!-- Desktop Bottom Left CTA -->
+	<div class="hidden md:block absolute bottom-0 left-0 p-8 z-50">
+		<WhatsappParticipa />
 	</div>
 </section>
 

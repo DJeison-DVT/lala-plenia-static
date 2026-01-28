@@ -11,7 +11,7 @@ import terminos from "../assets/navbar/Navbar TERMINOS.png";
 >
 	<div class="w-full flex items-center justify-between px-4 lg:px-8 h-full">
 		<!-- Left Group: Logo -->
-		<a href="#" class="h-30 flex items-center -my-2 p-3">
+		<a href="#" class="h-30 flex items-center -my-2 p-3 shrink-0">
 			<img
 				src={logo.src}
 				alt="Logo"
@@ -20,7 +20,7 @@ import terminos from "../assets/navbar/Navbar TERMINOS.png";
 		</a>
 
 		<!-- Right Group: Navigation -->
-		<div class="hidden lg:flex items-center -space-x-3">
+		<div class="flex items-center -space-x-1 lg:-space-x-3">
 			<a
 				href="#premios"
 				class="transition-transform hover:scale-105 active:scale-95 relative hover:z-10"
@@ -28,7 +28,7 @@ import terminos from "../assets/navbar/Navbar TERMINOS.png";
 				<img
 					src={premios.src}
 					alt="Premios"
-					class="max-h-15 w-auto object-contain"
+					class="h-8 sm:h-10 lg:max-h-15 w-auto object-contain"
 				/>
 			</a>
 			<a
@@ -38,7 +38,7 @@ import terminos from "../assets/navbar/Navbar TERMINOS.png";
 				<img
 					src={howto.src}
 					alt="Como Participar"
-					class="max-h-15 w-auto object-contain"
+					class="h-8 sm:h-10 lg:max-h-15 w-auto object-contain"
 				/>
 			</a>
 			<a
@@ -48,7 +48,7 @@ import terminos from "../assets/navbar/Navbar TERMINOS.png";
 				<img
 					src={productos.src}
 					alt="Productos"
-					class="max-h-15 w-auto object-contain"
+					class="h-8 sm:h-10 lg:max-h-15 w-auto object-contain"
 				/>
 			</a>
 			<a
@@ -58,26 +58,9 @@ import terminos from "../assets/navbar/Navbar TERMINOS.png";
 				<img
 					src={terminos.src}
 					alt="Términos"
-					class="max-h-15 w-auto object-contain"
+					class="h-8 sm:h-10 lg:max-h-15 w-auto object-contain"
 				/>
 			</a>
 		</div>
-
-		<!-- Mobile Menu Button (Hamburger) - Optional but good for mobile -->
-		<button class="lg:hidden text-gray-600 focus:outline-none">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				class="h-10 w-10"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke="currentColor"
-			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M4 6h16M4 12h16m-7 6h7"></path>
-			</svg>
-		</button>
 	</div>
 </nav>

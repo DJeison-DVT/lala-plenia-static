@@ -1,19 +1,23 @@
 ---
 import description from "../assets/video/Video Descripcion.png";
 import mobileDescription from "../assets/video/mobile/Mobile Video texto.png";
+import WhatsappParticipa from "./WhatsappParticipa.astro";
 ---
 
 <section class="relative my-24 w-full">
 	<!-- Background element expanding top and bottom -->
-	<div class="absolute inset-x-0 -top-167.5 md:-top-67.5 xl:-top-78 -bottom-120 bg-white -z-10"></div>
+	<div class="absolute inset-x-0 -top-167.5 md:-top-80 xl:-top-90 -bottom-100 bg-white -z-10"></div>
 
 	<div class="container mx-auto px-4">
-		<div class="flex justify-start mb-8">
+		<div class="flex flex-col md:flex-row justify-start mb-8">
 			<img
 				src={description.src}
 				alt="Video Descripcion"
 				class="h-auto max-w-full md:max-w-lg object-contain hidden md:block"
 			/>
+			<div class="md:hidden w-full flex flex-col items-center gap-4">
+				<WhatsappParticipa />
+			</div>
 			<img src={mobileDescription.src} alt="Mobile Video Descripcion" class="md:hidden h-auto max-w-full object-contain" />
 		</div>
 		<div
@@ -22,4 +26,5 @@ import mobileDescription from "../assets/video/mobile/Mobile Video texto.png";
 			<span class="text-gray-500 font-medium">Video Placeholder</span>
 		</div>
 	</div>
+
 </section>
