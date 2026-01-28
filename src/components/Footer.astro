@@ -2,6 +2,9 @@
 import terms from "../assets/footer/Footer Terms.png";
 import promo from "../assets/footer/Footer PROMO.png";
 import aviso from "../assets/footer/Footer AVISO.png";
+import mobileJugadores from "../assets/footer/mobile/Mobile Footer jugadores.png";
+import mobilePlenia from "../assets/footer/mobile/Mobile Footer plenia.png";
+import mobilePromo from "../assets/footer/mobile/Mobile Footer promo.png";
 ---
 
 <footer>
@@ -35,6 +38,38 @@ import aviso from "../assets/footer/Footer AVISO.png";
 		</a>
 	</div>
 
-	<!-- Full Width Promo Image -->
-	<img src={promo.src} alt="Legales" class="w-full h-auto block" />
+	<!-- Full Width Promo Image (Desktop) -->
+	<img
+		src={promo.src}
+		alt="Legales"
+		class="w-full h-auto hidden md:block"
+	/>
+
+	<!-- Mobile Version -->
+	<div class="md:hidden flex flex-col items-center w-full">
+		<!-- Row 1: Plenia Logo (Centered) -->
+		<div class="py-4">
+			<img
+				src={mobilePlenia.src}
+				alt="Plenia"
+				class="h-auto max-w-xs object-contain"
+			/>
+		</div>
+
+		<!-- Row 2: Promo (Centered) -->
+		<div class="py-4">
+			<img
+				src={mobilePromo.src}
+				alt="Promo"
+				class="h-auto max-w-xs object-contain"
+			/>
+		</div>
+
+		<!-- Row 3: Jugadores (Full Width) -->
+		<img
+			src={mobileJugadores.src}
+			alt="Jugadores"
+			class="w-full h-auto block"
+		/>
+	</div>
 </footer>

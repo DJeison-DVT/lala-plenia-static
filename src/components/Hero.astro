@@ -3,6 +3,8 @@ import description from "../assets/landing/Landing Descripcion.png";
 import home from "../assets/landing/Landing Home.png";
 import participa from "../assets/landing/Landing Participa.png";
 import products from "../assets/landing/Landing Products.png";
+import mobileEmpaque from "../assets/landing/mobile/Mobile Landing empaque.png";
+import mobileBowl from "../assets/landing/mobile/Mobile Landing bowl.png";
 ---
 
 <header
@@ -25,7 +27,7 @@ import products from "../assets/landing/Landing Products.png";
 		<img
 			src={description.src}
 			alt="Descripción"
-			class="hidden md:block w-full max-w-64 xl:max-w-72 2xl:max-w-md h-auto object-contain"
+			class="w-full max-w-64 xl:max-w-72 2xl:max-w-md h-auto object-contain"
 		/>
 	</div>
 
@@ -33,16 +35,25 @@ import products from "../assets/landing/Landing Products.png";
 	<div
 		class="w-full grow p-4 lg:p-8 flex flex-col items-center justify-center"
 	>
+		<!-- Desktop Image -->
 		<img
 			src={products.src}
 			alt="Products Hero"
-			class="w-full h-auto object-contain max-h-150"
+			class="hidden md:block w-full h-auto object-contain max-h-150"
 		/>
-		<!-- Mobile Description -->
-		<img
-			src={description.src}
-			alt="Descripción"
-			class="block md:hidden w-full max-w-96 h-auto object-contain mt-8"
-		/>
+
+		<!-- Mobile Layout -->
+		<div class="md:hidden flex flex-col items-center w-full">
+			<img
+				src={mobileEmpaque.src}
+				alt="Empaque"
+				class="w-auto h-auto max-w-xs object-contain z-10"
+			/>
+			<img
+				src={mobileBowl.src}
+				alt="Bowl"
+				class="w-auto h-auto max-w-xs object-contain -mt-12 z-20 relative"
+			/>
+		</div>
 	</div>
 </header>

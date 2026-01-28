@@ -10,6 +10,13 @@ import Footer from "../components/Footer.astro";
 import FloatingUI from "../components/FloatingUI.astro";
 import PopUp from "../components/PopUp.astro";
 import logo from "../assets/navbar/Navbar Logo.png";
+
+import { getImage } from "astro:assets";
+import backImg from "../assets/back.png";
+import mobileBackImg from "../assets/mobile_back.png";
+
+const desktopBackground = await getImage({src: backImg, format: 'webp', quality: 100});
+const mobileBackground = await getImage({src: mobileBackImg, format: 'webp', quality: 100});
 ---
 
 <html lang="en">
@@ -19,8 +26,22 @@ import logo from "../assets/navbar/Navbar Logo.png";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Golalazo de Sabor</title>
+		<style define:vars={{ desktopImage: `url("${desktopBackground.src}")`, mobileImage: `url("${mobileBackground.src}")` }}>
+			body {
+				background-image: var(--mobileImage);
+				background-attachment: fixed;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			@media (min-width: 768px) {
+				body {
+					background-image: var(--desktopImage);
+				}
+			}
+		</style>
 	</head>
-	<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+	<body class="text-gray-900 overflow-x-hidden">
 		<Navbar />
 		<main>
 			<Hero />
