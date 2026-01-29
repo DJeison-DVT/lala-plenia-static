@@ -1,6 +1,5 @@
 ---
 import description from "../assets/video/Video Descripcion.png";
-import mobileDescription from "../assets/video/mobile/Mobile Video texto.png";
 import WhatsappParticipa from "./WhatsappParticipa.astro";
 ---
 
@@ -13,12 +12,11 @@ import WhatsappParticipa from "./WhatsappParticipa.astro";
 			<img
 				src={description.src}
 				alt="Video Descripcion"
-				class="h-auto max-w-full md:max-w-lg object-contain hidden md:block"
+				class="h-auto max-w-full md:max-w-lg object-contain"
 			/>
 			<div class="md:hidden w-full flex flex-col items-center gap-4">
 				<WhatsappParticipa />
 			</div>
-			<img src={mobileDescription.src} alt="Mobile Video Descripcion" class="md:hidden h-auto max-w-full object-contain" />
 		</div>
 		<div
 			class="w-full aspect-video bg-black/5 rounded-lg flex items-center justify-center border border-dashed border-gray-300"
