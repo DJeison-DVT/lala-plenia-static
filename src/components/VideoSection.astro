@@ -18,11 +18,43 @@ import WhatsappParticipa from "./WhatsappParticipa.astro";
 				<WhatsappParticipa />
 			</div>
 		</div>
-		<div
-			class="w-full aspect-video bg-black/5 rounded-lg flex items-center justify-center border border-dashed border-gray-300"
-		>
-			<span class="text-gray-500 font-medium">Video Placeholder</span>
+		<div class="w-full aspect-video rounded-lg overflow-hidden shadow-xl">
+			<video
+				id="promo-video"
+				class="w-full h-full object-cover"
+				controls
+				muted
+				preload="none"
+				playsinline
+			>
+				<source src="/videos/LalaPlenia.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
 		</div>
 	</div>
-
 </section>
+
+<script>
+	const video = document.getElementById("promo-video");
+
+	if (video instanceof HTMLVideoElement) {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						// Attempt to play only if it's paused to avoid interruptions
+						if (video.paused) {
+							video.play().catch((e) => console.log("Autoplay prevented:", e));
+						}
+					} else {
+						// Pause when providing out of view
+						video.pause();
+					}
+				});
+			},
+			{ threshold: 0.5 },
+		); // Trigger when 50% of the video is visible
+
+		observer.observe(video);
+	}
+</script>
